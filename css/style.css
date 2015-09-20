@@ -25,17 +25,18 @@ h2 texto-cabecera{
 }
 
 h3 {
-    font-size: 24px;
-    color: black;
+    font-size: 28px;
+    color: #46F29C;
     margin: 0px;
 }
+
 
 h4 {
     font-size: 22px;
     color: black;
 }
 
-footer h6 {
+h6 {
     font-size: 14px;
     font-weight: 300;
     color: #ffffff;
@@ -74,12 +75,18 @@ header {
     font-weight: 500;
     color: #fff;
     padding-left: 20px;
-    height: 121px;
+    height: 90px;
     line-height: 40px;
     width: 100%;
     max-width: 1260px;
     position: fixed;
-    top: 0px
+    top: 0px;
+    z-index: 100;
+}
+
+.INICIO {
+    width: 140px;
+    margin-left: 20px;
 }
 
 header h1 {
@@ -116,7 +123,7 @@ footer {
 
 #mainwrapper {
     min-height: 100%;
-    position: relative;
+    position: absolute;
     max-width: 1280px;
 }
 
@@ -133,13 +140,14 @@ footer {
     font-weight: 600;
     color: #ffffff;
     margin-top: 200px;
-    position: absolute; right: 500px; top: -20px;
+    position: absolute; right: 500px; top: -40px;
 }
 
 #img-header {
     background-image: url(../images/cabecera.jpg);
     width: 1280;
-    height: 600px;
+    height: 530px;
+    margin-bottom: -60px;
     position: relative;
     z-index: -1;
 }
@@ -147,7 +155,8 @@ footer {
 
 .horizontal {
     padding-left: 10px;
-    padding-top: 10px;
+    position: relative;
+    top: -15px;
 }
 
 
@@ -196,16 +205,24 @@ footer {
     margin-bottom: 30px;
 }
 
-#dg {
+#andg {
     animation-delay: 1s;
 }
 
-#dw {
+#andw {
+    animation-delay: 1.5s;
+}
+
+#andi {
     animation-delay: 2s;
 }
 
-#di {
-    animation-delay: 3s;
+#ansk {
+    animation-delay: 0.5s;
+}
+
+#ancv {
+    animation-delay: 1.5s;
 }
 
 
@@ -220,6 +237,7 @@ footer {
 .container-services h3{
     margin-top: 5px;
     margin-bottom: 15px;
+    font-weight: 400;
 }
 
 
@@ -246,15 +264,10 @@ top 200px;
 text-align: center
 }
 
-.element-menu h3{
-    color: #46F29C;
-    font-weight: 300
-}
 
 .element-menu {
-    margin-top: 30px;
-    margin-bottom: 30px;
     text-align: center;
+    padding-top: 100px;
 }
 
 
@@ -265,7 +278,7 @@ hr {border: 0; height: 0; box-shadow: 0 1px 5px 1px #46F29C; width: 80%; margin:
     padding: 20px;
     display: inline-block;
     width: 55%;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     background-color: #F2F2F2;
     border-radius: 10px;
 }
@@ -366,11 +379,31 @@ p #info-contact {
 }
 
 
-#skills {
+.skills {
     width: 30%;
     display: inline-block;
     float: left;
     margin-top: 50px;
+    margin-left: 5%;
+}
+
+progress[value] {
+    width: 80%;
+    height: 10px;
+    appareance: none;
+    -webkit-appareance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: #f2f2f2;
+    color: aqua;
+    border-radius: 5px;
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: #46F29C;
+    color: aqua;
+    border-radius: 5px;
 }
 
 progress {
@@ -390,21 +423,21 @@ progress {
     margin-bottom: 15px;
 }
 
-#resume-cv {
-    width: 60%;
+.resume-cv {
+    width: 55%;
     display: inline-block;
     margin-top: 50px;
-    padding-left: 3%;
-    padding-right: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
     text-align: justify;
 }
 
 
 .item {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     margin: 50px;
-    border-radius: 125px;
+    border-radius: 150px;
     background-color: coral;
 }
 
@@ -430,31 +463,33 @@ div a {display:block; width:100%; height:100%}
 
 .element-item .tit-proy {
     position: absolute;
-    left: 50px;
-    top: 175px;
+    left: -15px;
+    top: 180px;
     text-align: right;
-    width: 200px;
-    border-radius: 20px;
-    background-color: rgba(70, 242, 156, 0.5);
+    width: 230px;
+    background-color: rgba(255, 255, 255, 0.8);
     color: black;
     border: solid;
     border-color: #ffffff;
     border-width: 1px;
     padding-right: 5px;
+    font-size: 18px;
+    margin-right: 50px;
 }
+
 
 .element-item .categoria {
     position: absolute;
-    left: 200px;
-    top: 20px;
+    left: 180px;
+    top: 5px;
     width: 50px;
     height: 50px;
-    border-radius: 27px;
+    border-radius: 33px;
     background-color: rgba(0, 0, 0, 0.6);
     color: #46F29C;
     border: solid;
     border-color: #ffffff;
-    border-width: 3px;
+    border-width: 2px;
     font-size: 20px;
     font-weight: 500;
     line-height: 50px;
@@ -463,20 +498,151 @@ div a {display:block; width:100%; height:100%}
 .element-item .tipo {
     position: absolute;
     left: 0px;
-    top: 220px;
+    top: 215px;
     text-align: left;
     height: 20px;
-    width: 150px;
+    width: 140px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(70, 242, 156, 0.4);
     color: black;
-    border: solid;
-    border-color: #ffffff;
-    border-width: 1px;
-    padding-right: 3px;
-    
+    padding-left: 10px;
+    padding-bottom: 2px;
 }
 
 .demonstrations {float: left; clear: both; width: 100%; margin-bottom: 18px; }
+
+
+
+
+
+.grid {
+    margin-top: 50px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.button {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 20px;
+    margin-top: 50px;
+    border: none;
+    background-color: #46F29C;
+
+}
+
+.dgpe-uas {
+    background-image: url(../images/min-dgpe-euas.jpg);
+}
+
+.dge-htmhc {
+    background-image: url(../images/min-dge-htmhc.jpg);
+}
+
+.i3d-lg {
+    background-image: url(../images/min-3d-lg.jpg);
+}
+
+.dgpe-enc1 {
+    background-image: url(../images/min-dgpe-enc1.jpg);
+}
+
+.i3d-neuq {
+    background-image: url(../images/min-3d-neuq.jpg);
+}
+
+.dgpe-mv {
+    background-image: url(../images/min-dgpe-mv.jpg);
+}
+
+.dge-col {
+    background-image: url(../images/min-dge-col.jpg)
+}
+
+.dw-ae {
+    background-image: url(../images/min-dw-ae.jpg);
+}
+
+.dgc-ntp {
+    background-image: url(../images/min-dgc-ntp.jpg);
+}
+
+.dgl-dam {
+    background-image: url(../images/min-dgl-dam.jpg);
+}
+
+.ac-rs {
+    background-image: url(../images/min-ac-rs.jpg);
+}
+
+.dgpe-euva {
+    background-image: url(../images/min-dgpe-euva.jpg);
+}
+
+.dgpe-enc2 {
+    background-image: url(../images/min-dgpe-enc2.jpg);
+}
+
+.i3d-apg {
+    background-image: url(../images/min-3d-apg.jpg);
+}
+
+.dgpe-j5m {
+    background-image: url(../images/min-dgpe-j5m.jpg);
+}
+
+.dgc-11 {
+    background-image: url(../images/min-dgc-11.jpg);
+}
+
+.dgpe-j5c {
+    background-image: url(../images/min-dgpe-j5c.jpg);
+}
+
+.ac-eea {
+    background-image: url(../images/min-ac-eea.jpg);
+}
+
+.dge-tes {
+    background-image: url(../images/min-dge-tes.jpg);
+}
+
+.ac-tt {
+    background-image: url(../images/min-ac-tt.jpg);
+}
+
+.dge-act {
+    background-image: url(../images/min-dge-act.jpg);
+}
+
+.dge-vm {
+    background-image: url(../images/min-dge-vm.jpg);
+}
+
+.dgpe-stlw {
+    background-image: url(../images/min-dgpe-stlw.jpg);
+}
+
+.i3d-mv {
+    background-image: url(../images/min-3d-mv.jpg);
+}
+
+.dgl-ae {
+    background-image: url(../images/min-dgl-ae.jpg);
+}
+
+.dgpe-eual {
+    background-image: url(../images/min-dgpe-eual.jpg);
+}
+
+.ac-mt {
+    background-image: url(../images/min-ac-mt.jpg);
+}
 
 

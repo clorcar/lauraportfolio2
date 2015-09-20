@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
 <head lang="es">
     <meta charset="UTF-8">
@@ -6,6 +6,10 @@
     <!-- Style-->
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/animate.min.css" rel="stylesheet" />
+    
+    <link href="fancy/source/jquery.fancybox.css" rel="stylesheet" />
+    
+    <link href="fancy/source/jquery.fancybox.css" rel="stylesheet" />
 
     <!-- Font-->
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600' rel='stylesheet' type='text/css'>
@@ -14,15 +18,144 @@
     <!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/wow.js"></script>
-    <script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
     <script type="text/javascript">
         var w = new WOW();
         w.init();
     </script>
     <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="fancy/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type="text/javascript" src="fancy/source/jquery.fancybox.js"></script>
     
-    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
-    <!-- Magnific Popup core JS file -->
+    	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.fancybox').fancybox();
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+				openEffect : 'none',
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+				openEffect : 'elastic',
+				openSpeed  : 150,
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+				closeClick : true,
+				helpers : {
+					overlay : null
+				}
+			});
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+				prevEffect : 'none',
+				nextEffect : 'none',
+				closeBtn  : false,
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+		});
+	</script>
+    <script type="text/javascript">
+		$(document).ready(function() {
+            $('.grid').masonry({
+                itemSelector: '.grid-item',
+                columnWidth: 200
+                });
+            });
+     </script>
 
 
 </head>
@@ -53,38 +186,39 @@
             </div>
 
             <!-- SERVICIOS-->
-
-            <section id="servicios">
+            <section id="SERVICIOS">
                 <a href="#SERVICIOS"></a>
-                <div class="element-menu">
+                <div class="element-menu wow animated zoomIn">
                     <h3>SERVICIOS</h3>
                     <hr>
                 </div>
-                <div class="container-services wow animated fadeInUp" id="dg">
+                <div class="container-services wow animated fadeInUp" id="andg">
                     <i class="material-icons md-48">border_color</i>
                     <h3>Diseño Gráfico</h3>
                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa. Excepteur sint occaecat cupidatat non proident, sunt in culpa</p>
                 </div>
-                <div class="container-services wow animated fadeInUp" id="dw">
+                <div class="container-services wow animated fadeInUp" id="andw">
                     <i class="material-icons md-48">public</i>
                     <h3>Desarrollo Web</h3>
                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa. Excepteur sint occaecat cupidatat non proident, sunt in culpa</p>
                 </div>
-                <div class="container-services wow animated fadeInUp" id="di">
+                <div class="container-services wow animated fadeInUp" id="andi">
                     <i class="material-icons md-48">wb_sunny</i>
                     <h3>Interiorismo</h3>
                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa.Excepteur sint occaecat cupidatat non proident, sunt in culpa</p>
                 </div>
+
+                <br class="borra" />
             </section>
             
             <!-- ACERCA DE MI-->
 
             <section id="ACERCA DE MI">
                 <a href="#ACERCA DE MI"></a>
-                <div class="element-menu">
+                <div class="element-menu wow animated zoomIn">
                     <h3>ACERCA DE MI</h3>
                     <hr>
-                    <div id="skills">
+                    <div class="skills wow animated fadeInLeft" id="ansk">
                         <div class="single_progress_bar">
                             <h2>Diseño - 90%</h2>
                             <progress value="90" max="100"></progress>
@@ -94,13 +228,12 @@
                             <progress value="60" max="100"></progress>
                         </div>
                         <div class="single_progress_bar">
-                            <h2>Diseño - 90%</h2>
+                            <h2>Arquitecturas - 90%</h2>
                             <progress value="90" max="100"></progress>
                         </div>
-
                     </div>
                 </div>
-                <div id="resume-cv">
+                <div class="resume-cv wow animated fadeInRight" id="ancv">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non faucibus erat, non vestibulum massa. Donec sed dapibus neque. Vestibulum mauris dolor, mattis et leo non, efficitur commodo velit. Proin varius hendrerit interdum. Cras porta urna id purus dictum auctor. Sed at condimentum justo. Donec hendrerit odio ipsum, sit amet ultricies leo aliquet laoreet. Sed sed iaculis ligula. Morbi sit amet est sem. Integer convallis enim diam, a scelerisque velit malesuada in. Donec cursus hendrerit facilisis. Fusce cursus tellus at dolor ullamcorper, eu interdum mi sodales. Ut sollicitudin non augue at eleifend. Integer congue hendrerit aliquet. Nullam euismod velit nec sapien dictum, eu mollis urna sollicitudin. Sed velit erat, luctus eget diam nec, ultrices porta odio.<br>
                         Maecenas facilisis urna ac cursus tristique. Aenean maximus placerat aliquam. Curabitur eleifend orci lorem, nec tincidunt libero faucibus at. Cras ornare efficitur mi at rutrum. Aenean vel cursus mi, eu commodo purus. Donec pulvinar efficitur magna, finibus fermentum risus. Mauris pulvinar, nunc et sollicitudin lacinia, arcu augue feugiat quam, nec tristique leo diam a nibh.
@@ -112,44 +245,325 @@
 
             <!-- PORTFOLIO-->
 
-            <div class="main_container">
                 <section id="PORTFOLIO">
                     <a href="#PORTFOLIO"></a>
-                    <div class="element-menu">
+                    <div class="element-menu wow animated zoomIn">
                         <h3>PORTFOLIO</h3>
                         <hr>
                     </div>
+                    
+            <div class="ui-group">
+
+                <div class="masonry-portfolio" data-js-module="hero-demo">
+                    <div class="ui-group">      
+                        <div class="filters button-group js-radio-button-group">
+                            <button class="button is-checked wow animated zoomIn" data-filter="*">Todos</button>
+                            <button class="button wow animated zoomIn" data-filter=".dg">Diseño Gráfico</button>
+                            <button class="button wow animated zoomIn" data-filter=".3d">Illustración 3D</button>
+                            <button class="button wow animated zoomIn" data-filter=".dw">Desarrollo Web</button>
+                            <button class="button wow animated zoomIn" data-filter=".ac">Arte. Curatorial</button>
+                        </div>
+                    </div>
                     <div class="grid">
-                        <div class="element-item de-htmc">
-                            <a href="images/cabecera.jpg" class="fresco" data-fresco-caption="Fran s Hals, Banquet of the Officers of the St George Civic Guard, 1627"></a>
-                            <h3 class="tit-proy">HTMHC</h3>
+                        <div class="element-item dg dgpe-uas">
+                            <a class="fancybox" href="images/dgpe-euas-01.jpg" data-fancybox-group="gallery" title="Alcala de la Selva. Europan"></a>
+                            <a class="fancybox" href="images/dgpe-euas-02.jpg" data-fancybox-group="gallery" title="Alcala de la Selva. Europan"></a>
+                            <a class="fancybox" href="images/dgpe-euas-03.jpg" data-fancybox-group="gallery" title="Alcala de la Selva. Europan"></a>
+                            <h6 class="tit-proy">Alcala de la Selva//Europan</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">panel expositivo</p>
+                        </div>
+                        <div class="element-item dg dge-htmhc">
+                            <a class="fancybox" href="images/dge-htmhc-01.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>
+                            <a class="fancybox" href="images/dge-htmhc-02.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>
+                            <a class="fancybox" href="images/dge-htmhc-03.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>
+                            <a class="fancybox" href="images/dge-htmhc-04.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>
+                            <a class="fancybox" href="images/dge-htmhc-05.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>
+                            <a class="fancybox" href="images/dge-htmhc-06.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>
+                            <a class="fancybox" href="images/dge-htmhc-07.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>
+                            <a class="fancybox" href="images/dge-htmhc-08.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>                            
+                            <a class="fancybox" href="images/dge-htmhc-09.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>      
+                            <a class="fancybox" href="images/dge-htmhc-10.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>  
+                            <a class="fancybox" href="images/dge-htmhc-11.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a> 
+                            <a class="fancybox" href="images/dge-htmhc-12.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>      
+                            <a class="fancybox" href="images/dge-htmhc-13.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>  
+                            <a class="fancybox" href="images/dge-htmhc-14.jpg" data-fancybox-group="gallery" title="Hibridaciones y Transculturalidad en los Modos de Habitación Contemporanea"></a>
+                            <h6 class="tit-proy">HTMHC</h6>
                             <p class="categoria">dg</p>
                             <p class="tipo">diseño editorial</p>
                         </div>
+                        <div class="element-item 3d i3d-lg">
+                            <a class="fancybox" href="images/3d-lg-01.jpg" data-fancybox-group="gallery" title="Land Art Generator. Copenhague"></a>
+                            <a class="fancybox" href="images/3d-lg-02.jpg" data-fancybox-group="gallery" title="Land Art Generator. Copenhague"></a>
+                            <a class="fancybox" href="images/3d-lg-03.jpg" data-fancybox-group="gallery" title="Land Art Generator. Copenhague"></a>
+                            <a class="fancybox" href="images/3d-lg-04.jpg" data-fancybox-group="gallery" title="Land Art Generator. Copenhague"></a>
+                            <a class="fancybox" href="images/3d-lg-05.jpg" data-fancybox-group="gallery" title="Land Art Generator. Copenhague"></a>
+                            <a class="fancybox" href="images/3d-lg-06.jpg" data-fancybox-group="gallery" title="Land Art Generator. Copenhague"></a>
+                            <a class="fancybox" href="images/3d-lg-07.jpg" data-fancybox-group="gallery" title="Land Art Generator. Copenhague"></a>
+                            <a class="fancybox" href="images/3d-lg-08.jpg" data-fancybox-group="gallery" title="Land Art Generator. Copenhague"></a>                            
+                            <h6 class="tit-proy">Land Art Generator</h6>
+                            <p class="categoria">3d</p>
+                            <p class="tipo">landscape</p>
+                        </div>
+                        <div class="element-item dg dgpe-enc1">
+                            <a class="fancybox" href="images/dgpe-enc1-01.jpg" data-fancybox-group="gallery" title="Plaza de la Encarnación. Fase 1"></a>
+                            <a class="fancybox" href="images/dgpe-enc1-02.jpg" data-fancybox-group="gallery" title="Plaza de la Encarnación. Fase 1"></a>
+                            <a class="fancybox" href="images/dgpe-enc1-03.jpg" data-fancybox-group="gallery" title="Plaza de la Encarnación. Fase 1"></a>
+                            <a class="fancybox" href="images/dgpe-enc1-04.jpg" data-fancybox-group="gallery" title="Plaza de la Encarnación. Fase 1"></a>
+                            <h6 class="tit-proy">Plaza de la Encarnación//F1</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">panel expositivo</p>
+                        </div>
+                        <div class="element-item 3d i3d-neuq">
+                            <a class="fancybox" href="images/3d-neuq-01.jpg" data-fancybox-group="gallery" title="Banco Provincia. Neuquen"></a>
+                            <a class="fancybox" href="images/3d-neuq-02.jpg" data-fancybox-group="gallery" title="Banco Provincia. Neuquen"></a>
+                            <a class="fancybox" href="images/3d-neuq-03.jpg" data-fancybox-group="gallery" title="Banco Provincia. Neuquen"></a>
+                            <a class="fancybox" href="images/3d-neuq-04.jpg" data-fancybox-group="gallery" title="Banco Provincia. Neuquen"></a>
+                            <h6 class="tit-proy">Banco Provincia//Neuquen</h6>
+                            <p class="categoria">3d</p>
+                            <p class="tipo">concurso</p>
+                        </div>
+                        <div class="element-item dg dgpe-mv">
+                            <a class="fancybox" href="images/dgpe-mv-01.jpg" data-fancybox-group="gallery" title="Museo del Vino. Bollullos"></a>
+                            <a class="fancybox" href="images/dgpe-mv-02.jpg" data-fancybox-group="gallery" title="Museo del Vino. Bollullos"></a>
+                            <h6 class="tit-proy">Museo del Vino</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">panel expositivo</p>
+                        </div>
+                        <div class="element-item dg dge-col">
+                            <a class="fancybox" href="images/dge-col-01.jpg" data-fancybox-group="gallery" title="Colector de Viviendas. HTHMC."></a>
+                            <a class="fancybox" href="images/dge-col-02.jpg" data-fancybox-group="gallery" title="Colector de Viviendas. HTHMC."></a>
+                            <a class="fancybox" href="images/dge-col-03.jpg" data-fancybox-group="gallery" title="Colector de Viviendas. HTHMC."></a>
+                            <a class="fancybox" href="images/dge-col-04.jpg" data-fancybox-group="gallery" title="Colector de Viviendas. HTHMC."></a>
+                            <a class="fancybox" href="images/dge-col-05.jpg" data-fancybox-group="gallery" title="Colector de Viviendas. HTHMC."></a>
+                            <a class="fancybox" href="images/dge-col-06.jpg" data-fancybox-group="gallery" title="Colector de Viviendas. HTHMC."></a>
+                            <a class="fancybox" href="images/dge-col-07.jpg" data-fancybox-group="gallery" title="Colector de Viviendas. HTHMC."></a>
+                            <a class="fancybox" href="images/dge-col-08.jpg" data-fancybox-group="gallery" title="Colector de Viviendas. HTHMC."></a>
+                            <a class="fancybox" href="images/dge-col-09.jpg" data-fancybox-group="gallery" title="Colector de Viviendas. HTHMC."></a>
+                            <a class="fancybox" href="images/dge-col-10.jpg" data-fancybox-group="gallery" title="Colector de Viviendas. HTHMC."></a>
+                            <a class="fancybox" href="images/dge-col-11.jpg" data-fancybox-group="gallery" title="Colector de Viviendas. HTHMC."></a>
+                            <a class="fancybox" href="images/dge-col-12.jpg" data-fancybox-group="gallery" title="Colector de Viviendas. HTHMC."></a>
+                            <h6 class="tit-proy">Colector de Viviendas</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">diseño editorial</p>
+                        </div>
+                        <div class="element-item dw dw-ae">
+                            <a href="http://al-exito.org/"></a>
+                            <h6 class="tit-proy">Al Éxito Crowdfunding</h6>
+                            <p class="categoria">dw</p>
+                            <p class="tipo">plataforma</p>
+                        </div>
+                        <div class="element-item dg dgc-ntp">
+                            <a class="fancybox" href="images/dgc-ntp.jpg" data-fancybox-group="gallery" title="No te pierdas"></a>
+                            <h6 class="tit-proy">No te pierdas</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">cartel</p>
+                        </div>
+                        <div class="element-item dg dgl-dam">
+                            <a class="fancybox" href="images/dgl-dam-01.jpg" data-fancybox-group="gallery" title="Deixe a menina"></a>
+                            <a class="fancybox" href="images/dgl-dam-02.jpg" data-fancybox-group="gallery" title="Deixe a menina"></a>
+                            <h6 class="tit-proy">Deixe a menina</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">logo</p>
+                        </div>
+                        <div class="element-item ac ac-rs">
+                            <a class="fancybox" href="images/ac-rs-01.jpg" data-fancybox-group="gallery" title="Si los rascacielos no fueran tan altos y las casas tan rosas"></a>
+                            <a class="fancybox" href="images/ac-rs-02.jpg" data-fancybox-group="gallery" title="Si los rascacielos no fueran tan altos y las casas tan rosas"></a>
+                            <a class="fancybox" href="images/ac-rs-03.jpg" data-fancybox-group="gallery" title="Si los rascacielos no fueran tan altos y las casas tan rosas"></a>
+                            <a class="fancybox" href="images/ac-rs-04.jpg" data-fancybox-group="gallery" title="Si los rascacielos no fueran tan altos y las casas tan rosas"></a>
+                            <a class="fancybox" href="images/ac-rs-05.jpg" data-fancybox-group="gallery" title="Si los rascacielos no fueran tan altos y las casas tan rosas"></a>
+                            <a class="fancybox" href="images/ac-rs-06.jpg" data-fancybox-group="gallery" title="Si los rascacielos no fueran tan altos y las casas tan rosas"></a>
+                            <a class="fancybox" href="images/ac-rs-07.jpg" data-fancybox-group="gallery" title="Si los rascacielos no fueran tan altos y las casas tan rosas"></a>
+                            <a class="fancybox" href="images/ac-rs-08.jpg" data-fancybox-group="gallery" title="Si los rascacielos no fueran tan altos y las casas tan rosas"></a>
+                            <a class="fancybox" href="images/ac-rs-09.jpg" data-fancybox-group="gallery" title="Si los rascacielos no fueran tan altos y las casas tan rosas"></a>
+                            <a class="fancybox" href="images/ac-rs-10.jpg" data-fancybox-group="gallery" title="Si los rascacielos no fueran tan altos y las casas tan rosas"></a>
+                            <a class="fancybox" href="images/ac-rs-11.jpg" data-fancybox-group="gallery" title="Si los rascacielos no fueran tan altos y las casas tan rosas"></a>
+                            <h6 class="tit-proy">Si los rascacielos ...</h6>
+                            <p class="categoria">ac</p>
+                            <p class="tipo">proyecto curatorial</p>
+                        </div>
+                        <div class="element-item dg dgpe-euva">
+                            <a class="fancybox" href="images/dgpe-euva-01.jpg" data-fancybox-group="gallery" title="Valverde del Hierro. Europan"></a>
+                            <a class="fancybox" href="images/dgpe-euva-02.jpg" data-fancybox-group="gallery" title="Valverde del Hierro. Europan"></a>
+                            <h6 class="tit-proy">Valverde del Hierro//Europan</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">panel expositivo</p>
+                        </div>
+                        <div class="element-item dg dgpe-enc2">
+                            <a class="fancybox" href="images/dgpe-enc2-01.jpg" data-fancybox-group="gallery" title="Plaza de la Encarnación. Fase 2."></a>
+                            <a class="fancybox" href="images/dgpe-enc2-02.jpg" data-fancybox-group="gallery" title="Plaza de la Encarnación. Fase 2."></a>
+                            <a class="fancybox" href="images/dgpe-enc2-03.jpg" data-fancybox-group="gallery" title="Plaza de la Encarnación. Fase 2."></a>
+                            <h6 class="tit-proy">Plaza de la Encarnacion//F2</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">panel expositivo</p>
+                        </div>
+                        <div class="element-item 3d i3d-apg">
+                            <a class="fancybox" href="images/3d-apg-01.jpg" data-fancybox-group="gallery" title="Centro Inserción Socio-laboral Apice. Gerena"></a>
+                            <a class="fancybox" href="images/3d-apg-02.jpg" data-fancybox-group="gallery" title="Centro Inserción Socio-laboral Apice. Gerena"></a>
+                            <a class="fancybox" href="images/3d-apg-03.jpg" data-fancybox-group="gallery" title="Centro Inserción Socio-laboral Apice. Gerena"></a>
+                            <a class="fancybox" href="images/3d-apg-04.jpg" data-fancybox-group="gallery" title="Centro Inserción Socio-laboral Apice. Gerena"></a>
+                            <a class="fancybox" href="images/3d-apg-05.jpg" data-fancybox-group="gallery" title="Centro Inserción Socio-laboral Apice. Gerena"></a>
+                            <a class="fancybox" href="images/3d-apg-06.jpg" data-fancybox-group="gallery" title="Centro Inserción Socio-laboral Apice. Gerena"></a>
+                            <a class="fancybox" href="images/3d-apg-07.jpg" data-fancybox-group="gallery" title="Centro Inserción Socio-laboral Apice. Gerena"></a>
+                            <a class="fancybox" href="images/3d-apg-08.jpg" data-fancybox-group="gallery" title="Centro Inserción Socio-laboral Apice. Gerena"></a>
+                            <a class="fancybox" href="images/3d-apg-09.jpg" data-fancybox-group="gallery" title="Centro Inserción Socio-laboral Apice. Gerena"></a>
+                            <h6 class="tit-proy">Centro Inserción Apice/h6>
+                            <p class="categoria">3d</p>
+                            <p class="tipo">concurso</p>
+                        </div>
+                        <div class="element-item dg dgpe-j5m">
+                            <a class="fancybox" href="images/dgpe-j5m-01.jpg" data-fancybox-group="gallery" title="Viviendas J5. Málaga"></a>
+                            <a class="fancybox" href="images/dgpe-j5m-02.jpg" data-fancybox-group="gallery" title="Viviendas J5. Málaga"></a>
+                            <h6 class="tit-proy">Viviendas J5//Málaga</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">panel expositivo</p>
+                        </div>
+                        <div class="element-item dg dgc-11">
+                            <a class="fancybox" href="images/dgc-11.jpg" data-fancybox-group="gallery" title="Terras Gauda"></a>
+                            <h6 class="tit-proy">Terras Gauda</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">cartel</p>
+                        </div>
+                        <div class="element-item ac ac-eea">
+                            <a class="fancybox" href="images/ac-eea-03.jpg" data-fancybox-group="gallery" title="En el abandono"></a>
+                            <a class="fancybox" href="images/ac-eea-04.jpg" data-fancybox-group="gallery" title="En el abandono"></a>
+                            <a class="fancybox" href="images/ac-eea-05.jpg" data-fancybox-group="gallery" title="En el abandono"></a>
+                            <a class="fancybox" href="images/ac-eea-06.jpg" data-fancybox-group="gallery" title="En el abandono"></a>
+                            <a class="fancybox" href="images/ac-eea-07.jpg" data-fancybox-group="gallery" title="En el abandono"></a>
+                            <a class="fancybox" href="images/ac-eea-08.jpg" data-fancybox-group="gallery" title="En el abandono"></a>
+                            <h6 class="tit-proy">En el abandono</h6>
+                            <p class="categoria">ac</p>
+                            <p class="tipo">proyecto curatorial</p>
+                        </div>
+                        <div class="element-item dg dgpe-j5c">
+                            <a class="fancybox" href="images/dgpe-j5c-01.jpg" data-fancybox-group="gallery" title="Viviendas J5. Coria del Río."></a>
+                            <a class="fancybox" href="images/dgpe-j5c-02.jpg" data-fancybox-group="gallery" title="Viviendas J5. Coria del Río."></a>
+                            <h6 class="tit-proy">Viviendas J5/Coria</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">panel expositivo</p>
+                        </div>
+                        <div class="element-item dg dge-tes">
+                            <a class="fancybox" href="images/dge-tes-01.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <a class="fancybox" href="images/dge-tes-02.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <a class="fancybox" href="images/dge-tes-03.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <a class="fancybox" href="images/dge-tes-04.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <a class="fancybox" href="images/dge-tes-05.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <a class="fancybox" href="images/dge-tes-06.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <a class="fancybox" href="images/dge-tes-07.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <a class="fancybox" href="images/dge-tes-08.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <a class="fancybox" href="images/dge-tes-09.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <a class="fancybox" href="images/dge-tes-10.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <a class="fancybox" href="images/dge-tes-11.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <a class="fancybox" href="images/dge-tes-12.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <a class="fancybox" href="images/dge-tes-13.jpg" data-fancybox-group="gallery" title="Casa y Poiesis. Transgresiones en los hábitos."></a>
+                            <h6 class="tit-proy">Casa y Poiesis</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">diseño editorial</p>
+                        </div>          
+                        <div class="element-item ac ac-tt">
+                            <a class="fancybox" href="images/ac-tt-01.jpg" data-fancybox-group="gallery" title="Tejiendo el tiempo. Stefania Scamardi"></a>
+                            <a class="fancybox" href="images/ac-tt-02.jpg" data-fancybox-group="gallery" title="Tejiendo el tiempo. Stefania Scamardi"></a>
+                            <a class="fancybox" href="images/ac-tt-03.jpg" data-fancybox-group="gallery" title="Tejiendo el tiempo. Stefania Scamardi"></a>
+                            <a class="fancybox" href="images/ac-tt-04.jpg" data-fancybox-group="gallery" title="Tejiendo el tiempo. Stefania Scamardi"></a>
+                            <a class="fancybox" href="images/ac-tt-05.jpg" data-fancybox-group="gallery" title="Tejiendo el tiempo. Stefania Scamardi"></a>
+                            <a class="fancybox" href="images/ac-tt-06.jpg" data-fancybox-group="gallery" title="Tejiendo el tiempo. Stefania Scamardi"></a>
+                            <a class="fancybox" href="images/ac-tt-07.jpg" data-fancybox-group="gallery" title="Tejiendo el tiempo. Stefania Scamardi"></a>
+                            <a class="fancybox" href="images/ac-tt-08.jpg" data-fancybox-group="gallery" title="Tejiendo el tiempo. Stefania Scamardi"></a>
+                            <a class="fancybox" href="images/ac-tt-09.jpg" data-fancybox-group="gallery" title="Tejiendo el tiempo. Stefania Scamardi"></a>
+                            <a class="fancybox" href="images/ac-tt-10.jpg" data-fancybox-group="gallery" title="Tejiendo el tiempo. Stefania Scamardi"></a>
+                            <h6 class="tit-proy">Tejiendo el tiempo</h6>
+                            <p class="categoria">ac</p>
+                            <p class="tipo">proyecto curatorial</p>
+                        </div>
+                        <div class="element-item dg dge-act">
+                            <a class="fancybox" href="images/dge-act-01.jpg" data-fancybox-group="gallery" title="Territorios Próximos. Espacios Mediados. Actas Seminarios."></a>
+                            <a class="fancybox" href="images/dge-act-02.jpg" data-fancybox-group="gallery" title="Territorios Próximos. Espacios Mediados. Actas Seminarios."></a>
+                            <a class="fancybox" href="images/dge-act-03.jpg" data-fancybox-group="gallery" title="Territorios Próximos. Espacios Mediados. Actas Seminarios."></a>
+                            <a class="fancybox" href="images/dge-act-04.jpg" data-fancybox-group="gallery" title="Territorios Próximos. Espacios Mediados. Actas Seminarios."></a>
+                            <a class="fancybox" href="images/dge-act-05.jpg" data-fancybox-group="gallery" title="Territorios Próximos. Espacios Mediados. Actas Seminarios."></a>
+                            <a class="fancybox" href="images/dge-act-06.jpg" data-fancybox-group="gallery" title="Territorios Próximos. Espacios Mediados. Actas Seminarios."></a>
+                            <a class="fancybox" href="images/dge-act-07.jpg" data-fancybox-group="gallery" title="Territorios Próximos. Espacios Mediados. Actas Seminarios."></a>
+                            <a class="fancybox" href="images/dge-act-08.jpg" data-fancybox-group="gallery" title="Territorios Próximos. Espacios Mediados. Actas Seminarios."></a>
+                            <a class="fancybox" href="images/dge-act-09.jpg" data-fancybox-group="gallery" title="Territorios Próximos. Espacios Mediados. Actas Seminarios."></a>
+                            <h6 class="tit-proy">Espacios Mediados</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">diseño editorial</p>
+                        </div>
+                        <div class="element-item dg dge-vm">
+                            <a class="fancybox" href="images/dge-vm-01.jpg" data-fancybox-group="gallery" title="Plan de dinamización Turística. Villamanrique"></a>
+                            <a class="fancybox" href="images/dge-vm-02.jpg" data-fancybox-group="gallery" title="Plan de dinamización Turística. Villamanrique"></a>
+                            <a class="fancybox" href="images/dge-vm-03.jpg" data-fancybox-group="gallery" title="Plan de dinamización Turística. Villamanrique"></a>
+                            <a class="fancybox" href="images/dge-vm-04.jpg" data-fancybox-group="gallery" title="Plan de dinamización Turística. Villamanrique"></a>
+                            <a class="fancybox" href="images/dge-vm-05.jpg" data-fancybox-group="gallery" title="Plan de dinamización Turística. Villamanrique"></a>
+                            <a class="fancybox" href="images/dge-vm-06.jpg" data-fancybox-group="gallery" title="Plan de dinamización Turística. Villamanrique"></a>
+                            <a class="fancybox" href="images/dge-vm-07.jpg" data-fancybox-group="gallery" title="Plan de dinamización Turística. Villamanrique"></a>
+                            <a class="fancybox" href="images/dge-vm-08.jpg" data-fancybox-group="gallery" title="Plan de dinamización Turística. Villamanrique"></a>
+                            <h6 class="tit-proy">Plan Turístico</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">diseño editorial</p>
+                        </div>
+                        <div class="element-item dg dgpe-stlw">
+                            <a class="fancybox" href="images/dgpe-stlw-01.jpg" data-fancybox-group="gallery" title="SlowCar. Intervención Sanlucar de Barrameda"></a>
+                            <a class="fancybox" href="images/dgpe-stlw-02.jpg" data-fancybox-group="gallery" title="SlowCar. Intervención Sanlucar de Barrameda"></a>
+                            <h6 class="tit-proy">Slow Car//Sanlucar</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">panel expositivo</p>
+                        </div>
+                        <div class="element-item 3d i3d-mv">
+                            <a class="fancybox" href="images/3d-mv-01.jpg" data-fancybox-group="gallery" title="Museo del Vino. Bollullos."></a>
+                            <a class="fancybox" href="images/3d-mv-02.jpg" data-fancybox-group="gallery" title="Museo del Vino. Bollullos."></a>
+                            <a class="fancybox" href="images/3d-mv-03.jpg" data-fancybox-group="gallery" title="Museo del Vino. Bollullos."></a>
+                            <h6 class="tit-proy">Museo del Vino</h6>
+                            <p class="categoria">3d</p>
+                            <p class="tipo">concurso</p>
+                        </div>
+                        <div class="element-item dg dgl-ae">
+                            <a class="fancybox" href="images/dgl-ae-01.jpg" data-fancybox-group="gallery" title="Al Éxito"></a>
+                            <a class="fancybox" href="images/dgl-ae-02.jpg" data-fancybox-group="gallery" title="Al Éxito"></a>
+                            <h6 class="tit-proy">Al Éxito</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">logo</p>
+                        </div>
+                        <div class="element-item dg dgpe-eual">
+                            <a class="fancybox" href="images/dgpe-eual-01.jpg" data-fancybox-group="gallery" title="Alemania. Europan"></a>
+                            <a class="fancybox" href="images/dgpe-eual-02.jpg" data-fancybox-group="gallery" title="Alemania. Europan"></a>
+                            <a class="fancybox" href="images/dgpe-eual-03.jpg" data-fancybox-group="gallery" title="Alemania. Europan"></a>
+                            <h6 class="tit-proy">Alemania//Europan</h6>
+                            <p class="categoria">dg</p>
+                            <p class="tipo">panel expositivo</p>
+                        </div>    
+                        <div class="element-item ac ac-mt">
+                            <a class="fancybox" href="images/ac-mt-01.jpg" data-fancybox-group="gallery" title="Homenaje Marina Tsvietaieva"></a>
+                            <a class="fancybox" href="images/ac-mt-02.jpg" data-fancybox-group="gallery" title="Homenaje Marina Tsvietaieva"></a>
+                            <a class="fancybox" href="images/ac-mt-03.jpg" data-fancybox-group="gallery" title="Homenaje Marina Tsvietaieva"></a>
+                            <a class="fancybox" href="images/ac-mt-04.jpg" data-fancybox-group="gallery" title="Homenaje Marina Tsvietaieva"></a>
+                            <a class="fancybox" href="images/ac-mt-05.jpg" data-fancybox-group="gallery" title="Homenaje Marina Tsvietaieva"></a>
+                            <h6 class="tit-proy">Homenaje Marina Tsvietaieva</h6>
+                            <p class="categoria">ac</p>
+                            <p class="tipo">proyecto curatorial</p>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="parent-container">
-                        <a href="images/cabecera.jpg">Open popup 1</a>
-                        <a href="images/frans_hals.jpg">Open popup 2</a>
-                        <a href="images/">Open popup 3</a>
-                    </div>
-                </section>
+            <br class="borra" />
+
             </div>
+
 
             <!-- CONTACTO-->
 
             <div id="main_container">
                 <section id="CONTACTO">
                     <a href="#CONTACTO"></a>
-                    <div class="element-menu">
+                    <div class="element-menu  wow animated zoomIn">
                         <h3>CONTACTO</h3>
                         <hr>
                         <br class="borra" />
                     </div>
                     <div>
-                        <address id="info-contact">
+                        <div id="info-contact">
                             <p>Laura Tena<br>+34 744 400 461<br>info@lauratena.com</p>
-                        </address>
+                        </div>
 
                         <section id="form-contact">
                             <form action="MAILTO:lauratenasanchez@gmail.com" method="post">
@@ -168,7 +582,9 @@
                     </div>
                 </section>
             </div>
-            
+                
+             <!-- script-isotope-->               
+              <script src="js/isotope-docs.min.js"></script>
             <!-- footer-->
 
             <br class="borra" />
@@ -180,17 +596,6 @@
         </div>
 
     </div>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.image-link').magnificPopup({ type: 'image' });
-            $('.parent-container').magnificPopup({
-                delegate: 'a', // child items selector, by clicking on it popup will open
-                type: 'image'
-                // other options
-            });
-        });
-    </script>
 
 </body>
 </html>
